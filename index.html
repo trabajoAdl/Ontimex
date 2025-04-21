@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <style>
+    .bg-menu{
+        background: #052439;
+    }
+    header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        background: #052439;
+        padding: 15px;
+        z-index: 10;
+    }
+    header nav{
+        width: 100%;
+    }
+    header nav .logo{
+        width: 9%;
+    }
+    nav img{
+        width: 100%;
+    }
+    header nav ul{
+        list-style: none;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    header nav ul li{
+        padding: 5px
+    }
+    header nav ul li a{
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin: 0 15px;
+        font-size: 12px;
+    }
+    nav .menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    nav{
+        display: block;
+    }
+    .menu-reponsive{
+        display: none;
+    }
+    .banner-contenedor {
+        width: 100%;
+        height: 100vh;
+        background: url("banner.png") center center no-repeat;
+        background-size: cover;
+    }
+    .contendor-trasparente{
+        background: url("conten.png") center center no-repeat;
+        background-size: cover;
+    }
+
+    .fondo-mapa{
+        background: url("Estructura Web - Ontimexfondo-16.png") center center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+    }
+    .mapa-animado{
+        background: url("mapa_animacion.gif") center center no-repeat;
+        background-size: cover;
+        width: 70%;
+        height: 55vh;
+    }
+    @media (max-width: 880px) {
+        header nav ul li a{
+            letter-spacing: 0px;
+            margin: 0 5px;
+            font-size: 11px;
+        }
+      }
+      @media (max-width: 767px) {
+        nav{
+            display: none;
+        }
+        .menu-reponsive{
+            display: block;
+        }
+      }
+  </style>
+  <body>
+    <header>
+        <nav>
+            <div class="menu">
+                <div class="logo">
+                    <a href="#"><img src="logo.png" alt=""></a>
+                </div>
+                <ul>
+                    <li class="border-end border-light"><a href="#nosotros">Nosotros</a></li>
+                    <li class="border-end border-light"><a href="#servicios">Servicios</a></li>
+                    <li class="border-end border-light"><a href="#porque">¿Porque Elegirnos?</a></li>
+                    <li ><a href="#cobertura">Cobertura</a></li>
+                    <li class="border-bottom border-info"><a href="#contacto">Habla con un Experto</a></li>
+                    <li><a class="btn btn-info text-light fw-bold" href="#contacto">Empezar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="menu-reponsive ">
+            <div class="row">
+                <div class="col-2">
+                    <a class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                        <i class='bx bx-menu'></i>
+                    </a>
+                </div>
+                <div class="col-10 d-flex justify-content-center">
+                    <div class="col-5">
+                        <a href="#"><img src="logo.png" class="img-fluid" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<style>
+    .banner-contenedor .subtitulo{
+        font-size: 15px;
+
+    }
+    .banner-contenedor .titulo{
+        font-size: 30px;
+    }
+    .banner-contenedor .botones{
+        font-size: 14px;
+    }
+    .fade-in-left{
+        opacity: 1;
+        transform: translate(-100%, 0px);
+        transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .fade-in-left.visible{
+        opacity: 1;
+        transform: translate(0%, 0px);
+        transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .fade-in-image{
+        opacity: 0;
+        transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .fade-in-image.visible {
+        opacity: 1;
+    }
+    .text-justify{
+        text-align: justify
+    }
+    .linea{
+        width: 10%;
+        height: 10px;
+    }
+    @media (max-width: 1430px) {
+        .banner-contenedor .subtitulo{
+        font-size: 13px;
+        }
+        .banner-contenedor .titulo{
+            font-size: 25px;
+        }
+        .banner-contenedor .botones{
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 1330px) {
+        .banner-contenedor .titulo{
+            font-size: 23px;
+        }
+    }
+    @media (max-width: 1120px) {
+        .banner-contenedor .titulo{
+            font-size: 20px;
+        }
+    }
+    
+    @media (max-width: 380px) {
+        .banner-contenedor .subtitulo{
+            font-size: 11px;
+        }
+        .banner-contenedor .titulo{
+            font-size: 15px;
+        }
+    }
+
+    h1{
+        color: #052439;
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .descripcion{
+        color: #052439;
+        font-size: 25px;
+        font-weight: 100;
+    }
+    h5{
+        color: #052439;
+        font-size: 20px;
+        font-weight: 450;
+    }
+    @media (max-width: 500px) {
+        h1{
+            font-size: 30px;
+        }
+        .descripcion{
+            font-size: 20px;
+        }
+    }
+    .linea-separdor{
+        background: #052439;
+        width: 70%;
+        height: 10px;
+        margin-top: 5%;
+    }
+
+    .contenedor{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      .contenedor2{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      .contenedor3{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      .contenedor4{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+</style>
+
+    <!-- BANNER -->
+    <section class="banner-contenedor">
+        <div class="container-fluid">
+            <div class="row vh-100 justify-content-start align-items-end ">
+                <div class="col-12 col-lg-xl-7 col-lg-9 col-md-12 contendor-trasparente p-4 p-xl-4 p-lg-1 fade-in-left" id="difumigadoanimado">
+                    <div class="col-12 d-flex justify-content-center mt-0 mt-xl-3 mt-lg-3 mt-md-3 mt-sm-3">
+                        <div class="col-12 col-lg-11">
+                            <p class="text-light subtitulo"><em>Empresa peruana especializada en operaciones logísticas, imporatción y exportación.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="col-12 col-lg-11">
+                            <h1 class="text-light titulo">"Combinamos experiencia, tecnologia y estrategia para brindar soluciones integrales que optimizan cada etapa de tu cadena de suministro".</h1>
+                        </div>
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center mt-5">
+                        <div class="col-12 col-lg-11 d-flex justify-content-start">
+                            <div class="col-5 col-lg-3 d-grid">
+                                <a class="btn btn-info fw-bold botones text-light" href="#">Conocenos</a>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-5 col-lg-3 d-grid">
+                                <a class="btn btn-outline-light fw-bold botones" href="#">Cotiza Aqui</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3"></div>
+                </div>
+
+                <div class="col-12 col-sm-12 d-flex justify-content-center fade-in-image" id="imagenAnimada">
+                    <div class="col-12 col-sm-12  col-xl-9 col-lg-11 col-md-11" >
+                        <div class="row ">
+
+                            <div class="col-6 col-sm-5 col-xl-3 col-lg-3 col-md-5 mx-auto mt-lg-0 mt-xl-0 mt-md-3 mt-3">
+                                <div class="col-11 mx-auto col-sm-10 col-md-10">
+                                    <img class="img-fluid" src="atencion.png" alt="">
+                                </div>
+                            </div>
+    
+                            <div class="col-6 col-sm-5 col-xl-3 col-lg-3 col-md-5 mt-lg-0 mt-xl-0 mt-md-3 mt-3 mx-auto">
+                                <div class="col-11 mx-auto col-sm-10 col-md-10 ">
+                                    <img class="img-fluid" src="procesos.png" alt="">
+                                </div>
+                            </div>
+    
+                            <div class="col-6 col-sm-5 col-xl-3 col-lg-3 col-md-5 mt-lg-0 mt-xl-0 mt-md-3 mt-3 mx-auto">
+                                <div class="col-11 mx-auto col-sm-10 col-md-10 ">
+                                    <img class="img-fluid" src="alcance.png" alt="">
+                                </div>
+                            </div>
+    
+                            <div class="col-6 col-sm-5 col-xl-3 col-lg-3 col-md-5 mt-lg-0 mt-xl-0 mt-md-3 mt-3 mx-auto">
+                                <div class="col-11 mx-auto col-sm-10 col-md-10">
+                                    <img class="img-fluid" src="tecnologia.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-12 col-lg-12 mt-5"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- END BANNER -->
+     <div id="servicios"></div>
+<br><br><br><br><br>
+    <!-- NOSOTROS -->
+     <section class="container contenedor">
+        <div class="row">
+            <div class="col-12 text-center d-flex justify-content-center">
+                <div class="col-12 col-xl-5 col-lg-5 col-md-10">
+                    <h1>Una Empresa de Logística del Siglo XXI</h1>
+                </div>
+            </div>
+            <div class="col-12 text-justify d-flex justify-content-center mt-4">
+                <div class="col-12 col-xl-9 col-lg-9 col-md-11">
+                    <p class="descripcion">Con nuestra pasion por la excelencia, nuestra marca registrada, le damos un plus a la logística, haciendo las cosas importantes con precisión, ademas de los innumerables detalles que garantizan la completa satifascción y el éxito del cliente. !Gestionamos la Logística Global y mucho más!</p>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="bg-info linea"></div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-md-6 col-sm-6 p-3 mx-auto d-flex justify-content-center align-items-center border-info border-end border-5">
+                <div class="col-8 text-center">
+                    <img class="img-fluid" src="caja.png" alt="">
+                    <h5 class="mt-5">Importación y Exportación Inter.</h5>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-md-6 col-sm-6 p-3 mx-auto d-flex justify-content-center align-items-center border-info border-end border-5">
+                <div class="col-8 text-center">
+                    <img class="img-fluid" src="carro.png" alt="">
+                    <h5 class="mt-5">Transporte y distribución local</h5>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-md-6 col-sm-6 p-3 mx-auto d-flex justify-content-center align-items-center border-info border-end border-5">
+                <div class="col-8 text-center">
+                    <img class="img-fluid" src="file.png" alt="">
+                    <h5 class="mt-5">Gestión Aduanera y Documentaria</h5>
+                </div>
+            </div>
+
+            <div class="col-12 col-xl-3 col-lg-3 col-md-3 col-md-6 col-sm-6 p-3 mx-auto d-flex justify-content-center align-items-center border-info border-end border-5">
+                <div class="col-8 text-center">
+                    <img class="img-fluid" src="almacen.png" alt="">
+                    <h5 class="mt-5">Almacenaje y Logistica</h5>
+                </div>
+            </div>
+            <div class="col-12"></div>
+            <div class="col-12 col-xl-12 mt-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-10 col-xl-3 col-lg-4 col-md-5 col-sm-6  d-grid mt-3">
+                        <a class="btn btn-dark fw-bold text-light " href="#"><span><i class='bx bxs-truck'></i></span> Seguimineto del Envio</a>
+                    </div>
+                    <div class="col-10 col-xl-3 col-lg-3 col-md-5 col-sm-5 d-grid mt-3">
+                        <a class="btn btn-info fw-bold text-light p-2" href="#"><span><i class='bx bxl-whatsapp' ></i></span> Solicitar Cotización</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     </section>
+    <!-- END NOSOTROS -->
+    <div class="w-100 d-flex justify-content-center contenedor" >
+        <div class="linea-separdor"></div>
+    </div>
+    <div id="porque"></div>
+     <br><br><br><br><br><br>
+     
+
+    <!-- PORQUE ELEGIRNOS -->
+     <section class="fondo-mapa contenedor2">
+        <br class="d-none d-xl-block d-lg-block d-md-none"><br class="d-none d-xl-block d-lg-block d-md-none"><br class="d-none d-xl-block d-lg-block d-md-none"><br class="d-none d-xl-block d-lg-block d-md-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center d-flex justify-content-center mt-xl-5 mt-lg-5 mt-md-2 mt-2">
+                    <div class="col-12 col-xl-5 col-lg-5 col-md-8 col-sm-12">
+                        <h1>¿Por qué elegirnos?</h1>
+                    </div>
+                </div>
+                <div class="col-12 text-justify d-flex justify-content-center mt-5">
+                    <div class="col-12 col-xl-10 col-lg-10 col-md-11 col-sm-12">
+                        <p class="descripcion">En Ontimex, no solo movemos carga, movemos confianza. Somos una empresa que entiende que detrás de cada envío hay un negocio, una meta y personas que esperan resultados. Por eso, combinamos tecnología de punta, un equipo altamente capacitado y una red estratégica de aliados nacionales e internacionales para brindarte soluciones logísticas seguras, ágiles y personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br class="d-none d-xl-block d-lg-block d-md-none"><br class="d-none d-xl-block d-lg-block d-md-none"><br class="d-none d-xl-block d-lg-block d-md-none">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center mt-xl-5 mt-lg-5 mt-md-0">
+                <div class="col-5 col-xl-2 col-lg-2 col-md-5  text-center mt-3">
+                    <div class="col-9 col-xl-7 col-lg-7 col-md-5 mx-auto">
+                        <img class="img-fluid" src="camion.png" alt="">
+                    </div>
+                    <h5>99% de cumplimiento en entregas</h5>
+                </div>
+                <div class="col-5 col-xl-2 col-lg-2 col-md-5  text-center">
+                    <div class="col-9 col-xl-7 col-lg-7 col-md-5 mx-auto mt-3">
+                        <img class="img-fluid" src="personas.png" alt="">
+                    </div>
+                    <h5>Más de 500 clientes satisfechos</h5>
+                </div>
+                <div class="col-5 col-xl-2 col-lg-2 col-md-5  text-center">
+                    <div class="col-9 col-xl-7 col-lg-7 col-md-5 mx-auto mt-3">
+                        <img class="img-fluid" src="peru.png" alt="">
+                    </div>
+                    <h5>Presencia en todo el perú</h5>
+                </div>
+                <div class="col-5 col-xl-2 col-lg-2 col-md-5  text-center">
+                    <div class="col-9 col-xl-7 col-lg-7 col-md-5 mx-auto mt-3">
+                        <img class="img-fluid" src="soporte.png" alt="">
+                    </div>
+                    <h5>Soporte 24/7</h5>
+                </div>
+                <div class="col-5 col-xl-2 col-lg-2 col-md-5  text-center">
+                    <div class="col-9 col-xl-7 col-lg-7 col-md-5  mx-auto mt-3">
+                        <img class="img-fluid" src="plataforma.png" alt="">
+                    </div>
+                    <h5>Plataforma de seguimiento</h5>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <div class="linea-separdor"></div>
+        </div>
+     </section>
+    <!-- END PORQUE ELEGIRNOS -->
+
+    <div id="cobertura"></div>
+<br><br><br><br><br><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block"><br class="d-block d-lg-none d-xxl-none d-xl-none d-md-block d-sm-block">
+
+    <!-- COBERTURA -->
+     <section class="container-fluid contenedor3">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="col-12 col-lg-3 text-center rounded" style="background: #bdbdbd;">
+                    <h1 class="text-light" >Cobertura Global</h1>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center mt-3">
+                <div class="col-12 col-lg-9 text-center">
+                    <p class="descripcion">Conectamos tu carga con los principales puertos, aeropuertos y rutas comerciales de América, Asia y Europa.</p>
+                </div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center mt-5">
+                <div class="mapa-animado"></div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center mt-5">
+                <div class="col-2 col-lg-2 col-10 d-grid">
+                    <a class="btn btn-info fw-bold text-light p-2" href="#"><span><i class='bx bxl-whatsapp' ></i></span> Solicitar Cotización</a>
+                </div>
+            </div>
+        </div>
+
+     </section>
+    <!-- END COBERTURA -->
+
+    <div class="w-100 d-flex justify-content-center contenedor3">
+        <div class="linea-separdor"></div>
+    </div>
+    <div id="contacto"></div>
+<br><br><br><br><br><br>
+    <!-- CONTACTANOS -->
+     <section class="fondo-mapa d-flex align-items-center contenedor4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-7 mt-5">
+                    
+                    <div class="col-12 col-lg-8 d-flex justify-content-center">
+                        <div class="col-12 text-center rounded" style="background: #bdbdbd;">
+                            <h1 class="text-light" >¡Contactanos hoy!</h1>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7 mt-5">
+                        <div class="col-12">
+                            <h1>Tu negocio,<br> más allá de fronteras.</h1>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <div class="col-12 text-justify">
+                            <p class="descripcion">Déjanos tus datos y uno de nuestros asesores se pondrá en contacto contigo.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-7 mt-5 d-flex justify-content-center justify-content-lg-start">
+                        <div class="col-10">
+                            <a class="btn btn-info text-light fw-bold" href="#">¿Listo para optimizar tu logística?</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 mt-3 d-flex justify-content-center">
+                    <div class="col-10 shadow bg-white p-4 rounded-3">
+                        <h1>¡Póngase en contacto ahora!</h1>
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Nombre</label>
+                              </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Correo</label>
+                              </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Número de Teléfono</label>
+                              </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" style="height: 100px" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Cotización</label>
+                              </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <a class="btn btn-dark bg-menu fw-bold" href="#">Entregar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- END CONTACTANOS -->
+    <br><br><br><br><br><br>
+    <!-- FOOTER -->
+    <section class="container-fluid bg-menu">
+        <div class="row p-5">
+          <div class="col-12 col-lg-12 d-flex justify-content-center">
+            <div class="col-5 col-lg-2 mx-auto">
+              <img class="img-fluid" src="Logo.png" alt="">
+            </div>
+          </div>
+  
+          <div class="col-12 col-lg-12 d-flex justify-content-center mt-4">
+            <ul class="d-flex justify-content-around list-unstyled separacion">
+              <li class="p-2 border-end border-light "><a class="text-decoration-none text-italic text-light text-copir" href="#scrollspyHeading1">Nosotros</a></li>
+              <li class="p-2 border-end border-light "><a class="text-decoration-none text-italic text-light text-copir" href="#scrollspyHeading2">Servicios</a></li>
+              <li class="p-2 border-end border-light "><a class="text-decoration-none text-italic text-light text-copir" href="#scrollspyHeading2">¿Porqué Elegirnos?</a></li>
+              <li class="p-2"><a class="text-decoration-none text-italic text-light text-copir" href="#scrollspyHeading3">Cobertura</a></li>
+            </ul>
+          </div>
+          <div class="col-12 d-flex justify-content-center mt-4">
+            <div class="col-11 text-center border-top border-light">
+            </div>
+          </div>
+  
+          <div class="col-12 col-md-12 col-lg-12 d-flex justify-content-center mt-5 mx-auto">
+            <div class="col-3 col-md-2 col-lg-1 d-flex justify-content-center">
+              <div class="col-5">
+                <img class="img-fluid" src="assets/REDES-23.png" alt="">
+              </div>
+            </div>
+            <div class="col-3 col-md-2 col-lg-1 d-flex justify-content-center">
+              <div class="col-5">
+                <img class="img-fluid" src="assets/REDES-24.png" alt="">
+              </div>
+            </div>
+            <div class="col-3 col-md-2 col-lg-1 d-flex justify-content-center">
+              <div class="col-5">
+                <img class="img-fluid" src="assets/REDES-25.png" alt="">
+              </div>
+            </div>
+            <div class="col-3 col-md-2 col-lg-1 d-flex justify-content-center">
+              <div class="col-5">
+                <img class="img-fluid" src="assets/REDES-26.png" alt="">
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-lg-12 d-flex justify-content-center mt-5">
+            <div class="col-12 col-lg-12 d-flex justify-content-evenly">
+                <div class="col-4 col-lg-4 text-center">
+                  <a class="text-light text-italic text-decoration-none text-copir" href="#">Politicas de Privacidad</a>
+                </div>
+      
+                <div class="col-4 col-lg-4 text-center">
+                  <a class="text-light text-italic text-decoration-none text-copir" href="#">Terminos y Condiciones</a>
+                </div>
+      
+                <div class="col-4 col-lg-4 text-center">
+                  <a class="text-light text-italic text-decoration-none text-copir" href="#">© Copyright 2025 | Now Freight</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- END FOOTER -->
+
+    <div class="offcanvas offcanvas-start bg-menu" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <div class="col-5">
+                <a href="#"><img class="img-fluid" src="Logo.png" alt=""></a>
+              </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row ">
+                <div class="col-12 p-4 text-center">
+                  <a class="text-decoration-none text-light" href="#">Nosotros</a>
+                </div>
+                <div class="col-12 p-4 text-center">
+                  <a class="text-decoration-none text-light" href="#servicios">Servicios</a>
+                </div>
+                <div class="col-12 p-4 text-center">
+                  <a class="text-decoration-none text-light" href="#porque">¿Porque Elegrinos?</a>
+                </div>
+                <div class="col-12 p-4 text-center">
+                    <a class="text-decoration-none text-light" href="#cobertura">Cobertura</a>
+                  </div>
+                <div class="col-12 p-4 text-center">
+                  <a class="text-decoration-none text-light" href="#contacto"><span><i class='bx bxs-user' style="font-size: 20px;"></i></span> Habla con un Experto</a>
+                </div>
+                <div class="col-12 p-4 text-center">
+                  <a href="#contacto" class="btn btn-info text-light fw-bold">Empezar</a>
+                </div>
+            </div>
+        </div>
+      </div>
+ <!-- GSAP + ScrollTrigger -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+          const imagen = document.getElementById('difumigadoanimado');
+          setTimeout(() => {
+            imagen.classList.add('visible');
+          }, 100); // medio segundo de delay, puedes ajustarlo
+        });
+
+        window.addEventListener('load', () => {
+          const imagen = document.getElementById('imagenAnimada');
+          setTimeout(() => {
+            imagen.classList.add('visible');
+          }, 100); // medio segundo de delay, puedes ajustarlo
+        });
+    </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".contenedor", {
+        scrollTrigger: {
+            trigger: ".contenedor",
+            start: "top 80%", // cuando el top del div llegue al 80% del viewport
+            toggleActions: "play none none none"
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out"
+        });
+
+        gsap.to(".contenedor2", {
+      scrollTrigger: {
+        trigger: ".contenedor2",
+        start: "top 80%", // cuando el top del div llegue al 80% del viewport
+        toggleActions: "play none none none"
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out"
+    });
+
+    gsap.to(".contenedor3", {
+      scrollTrigger: {
+        trigger: ".contenedor3",
+        start: "top 80%", // cuando el top del div llegue al 80% del viewport
+        toggleActions: "play none none none"
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out"
+    });
+
+    gsap.to(".contenedor4", {
+      scrollTrigger: {
+        trigger: ".contenedor4",
+        start: "top 80%", // cuando el top del div llegue al 80% del viewport
+        toggleActions: "play none none none"
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out"
+    });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const offcanvasElement = document.getElementById('staticBackdrop');
+      
+          // Bootstrap 5 necesita el objeto del componente para usar .hide()
+          const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+      
+          // Escucha todos los enlaces dentro del offcanvas
+          const links = offcanvasElement.querySelectorAll('a[href^="#"]');
+      
+          links.forEach(link => {
+            link.addEventListener('click', function () {
+              offcanvas.hide(); // Cierra el offcanvas
+            });
+          });
+        });
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
